@@ -1,16 +1,14 @@
-import Link from "next/link";
-import {
-    FileText
-} from "lucide-react"
+import { MainNav } from "@/components/main-nav";
+import { MobileNav } from "@/components/mobile-nav";
 
 export function SiteHeader() {
     return (
-        <div className="border-b">
+        <div className="border-b border-black">
             <div className="hidden md:flex h-16 items-center px-4">
-                <Link href="/" className="flex items-center">
-                    <FileText className="mr-2 h-8 w-8" />
-                    <h1>ScrollStats</h1>
-                </Link>
+                <MainNav />
+            </div>
+            <div className="flex md:hidden h-16 items-center px-4">
+                <MobileNav />
             </div>
         </div>
     );
