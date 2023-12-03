@@ -9,12 +9,15 @@ import {
 } from "@/components/ui/card";
 import { ChevronUp, ChevronsUp, ChevronDown, ChevronsDown } from 'lucide-react';
 import { StatCard } from "@/components/stat-card";
-import LChart from "@/components/line-chart";
+// import LChart from "@/components/line-chart";
+import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
     title: "ScrollStats",
     description: "A dashboard tracking the activity of Scroll users.",
 };
+
+const LChart = dynamic(() => import('@/components/line-chart'), { ssr: false });
 
 export default async function UsersPage({ params }: { params: { slug: string[] } }) {
 
@@ -123,20 +126,20 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                         />
                     </div>
                     <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-                        <Card className="border-black shadow-custom shadow">
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Active Smart Wallets"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-2">
-                                {/* <LChart /> */}
+                                <LChart data={data.active_accounts_chart} />
                             </CardContent>
                         </Card>
-                        <Card className="border-black shadow-custom shadow">
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Transactions"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-2">
-                                {/* <LChart data={data.transactions_chart} /> */}
+                                <LChart data={data.transactions_chart} />
                             </CardContent>
                         </Card>
                     </div>
