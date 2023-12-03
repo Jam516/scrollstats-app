@@ -15,9 +15,11 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.293.0",
+    "moment": "^2.29.4",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
+    "recharts": "^2.10.3",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7"
   },

@@ -3,7 +3,7 @@ import { MobileNav } from "@/components/mobile-nav";
 
 export function SiteHeader() {
     return (
-        <div className="border-b border-black">
+        <div className="border-b border-black bg-card-bg">
             <div className="hidden md:flex h-16 items-center px-4">
                 <MainNav />
             </div>

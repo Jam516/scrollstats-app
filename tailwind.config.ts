@@ -16,10 +16,14 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        'custom': '3px 3px 0px 0px rgba(73, 73, 73, 71)',
+      },
       fontFamily: {
         berkeleymono: ['BerkeleyMono', 'sans-serif'],
       },
       colors: {
+        'card-bg': '#FFF0DD',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

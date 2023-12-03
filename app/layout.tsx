@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ backgroundColor: '#FFF8F3' }}>
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />
           <div className="flex-1">{children}</div>
