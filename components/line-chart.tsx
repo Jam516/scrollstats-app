@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import moment from 'moment';
+import { TooltipProps } from 'recharts';
 
 type DataItem = {
     DATE: string;
@@ -11,6 +13,23 @@ type DataItem = {
 interface LineChartProps {
     data: DataItem[];
 }
+
+const formatDate = (date: string) => {
+    return moment(date, 'YY-MM-DD').format('DD-MMM-YY');
+};
+
+const CustomTooltip: React.FC<TooltipProps<any, any>> = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip" style={{ backgroundColor: '#fff', padding: '5px', border: '1px solid #ccc' }}>
+                <p className="label">{`${moment(label, 'YY-MM-DD').format('DD-MMM-YY')}`}</p>
+                <p style={{ color: '#8884d8' }}>{`VALUE: ${payload[0].value}`}</p>
+            </div>
+        );
+    }
+
+    return null;
+};
 
 const LChart: React.FC<LineChartProps> = ({ data }) => {
     // Determine the key for the data (either ACTIVE_WALLETS or TRANSACTIONS)
@@ -29,9 +48,10 @@ const LChart: React.FC<LineChartProps> = ({ data }) => {
                     bottom: 5,
                 }}
             >
-                <XAxis dataKey="DATE" />
+                <XAxis dataKey="DATE" tickFormatter={formatDate} />
                 <YAxis />
-                <Tooltip />
+                <Tooltip content={<CustomTooltip />} />
+
                 {/* <Legend /> */}
                 <Line type="monotone" dataKey={dataKey} stroke="#8884d8" activeDot={{ r: 8 }} />
             </LineChart>

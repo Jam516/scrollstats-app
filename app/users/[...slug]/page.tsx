@@ -11,6 +11,7 @@ import { ChevronUp, ChevronsUp, ChevronDown, ChevronsDown } from 'lucide-react';
 import { StatCard } from "@/components/stat-card";
 // import LChart from "@/components/line-chart";
 import dynamic from 'next/dynamic';
+import { RetentionTable } from "@/components/retention-table";
 
 export const metadata: Metadata = {
     title: "ScrollStats",
@@ -18,6 +19,17 @@ export const metadata: Metadata = {
 };
 
 const LChart = dynamic(() => import('@/components/line-chart'), { ssr: false });
+
+function AboutBlock() {
+    return (
+        <div className="flex flex-col items-left space-y-2 pt-6">
+            <h2 className="text-3xl font-bold tracking-tight">What is Scroll?</h2>
+            <p>ScrollStats was created to provide transparent and verifiable insights into the adoption of Scroll.</p>
+            <h2 className="text-3xl font-bold tracking-tight">What is ScrollStats?</h2>
+            <p>ScrollStats was created to provide transparent and verifiable insights into the adoption of Scroll.</p>
+        </div>
+    )
+}
 
 export default async function UsersPage({ params }: { params: { slug: string[] } }) {
 
@@ -103,17 +115,17 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             }
                         // subheader="Wallets"
                         />
-
+                        {/* rounded-none */}
                         {/* Third and Sixth cards (1m stats) - order adjusted for md screens */}
                         <StatCard
                             title="1m Active Wallets"
-                            className="border-black rounded-none bg-card-bg md:order-3"
+                            className="border-black shadow bg-card-bg md:order-3"
                             content={data.actives_1m[0].ACTIVE_WALLETS.toLocaleString()}
                         // subheader="Wallets"
                         />
                         <StatCard
                             title="1m Active Wallet Growth"
-                            className="border-black rounded-none bg-card-bg md:order-6"
+                            className="border-black shadow bg-card-bg md:order-6"
                             content={
                                 <>
                                     <div className="flex flex-row items-center">
@@ -128,7 +140,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                     <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
-                                <CardTitle>{titleparam + " Active Smart Wallets"}</CardTitle>
+                                <CardTitle>{titleparam + " Active Wallets"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-2">
                                 <LChart data={data.active_accounts_chart} />
@@ -140,6 +152,19 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardHeader>
                             <CardContent className="pl-2">
                                 <LChart data={data.transactions_chart} />
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div >
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
+                            <CardHeader>
+                                <CardTitle>{titleparam + " Wallet Retention"}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="pl-2">
+                                <div style={{ overflowX: 'auto', width: '100%' }}>
+                                    <RetentionTable data={data.retention_chart} timeframe={timeframe} />
+                                </div>
+                                <p>* Measures the percentage of wallets in the cohort that were active X {timeframe}s after their first transaction</p>
                             </CardContent>
                         </Card>
                     </div>
