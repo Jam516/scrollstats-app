@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "ScrollStats - Apps",
-    description: "A dashboard tracking applications on Scroll.",
+    title: "ScrollStats - Developers",
+    description: "A dashboard tracking developers on Scroll.",
 };
 
 export default async function AppsPage({ params }: { params: { slug: string[] } }) {

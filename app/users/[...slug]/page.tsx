@@ -24,7 +24,7 @@ function AboutBlock() {
     return (
         <div className="flex flex-col items-left space-y-2 pt-6">
             <h2 className="text-3xl font-bold tracking-tight">What is Scroll?</h2>
-            <p>ScrollStats was created to provide transparent and verifiable insights into the adoption of Scroll.</p>
+            <p>Scroll is a zkEVM Layer 2.</p>
             <h2 className="text-3xl font-bold tracking-tight">What is ScrollStats?</h2>
             <p>ScrollStats was created to provide transparent and verifiable insights into the adoption of Scroll.</p>
         </div>
@@ -162,7 +162,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardHeader>
                             <CardContent className="pl-2">
                                 <StackedBarChart data={data.contract_users_chart} />
-                                <p>* Excluding spam contracts</p>
+                                <p>* Excluding potential spam contracts</p>
                             </CardContent>
                         </Card>
                     </div>
@@ -173,7 +173,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardHeader>
                             <CardContent className="pl-2">
                                 <StackedBarChart data={data.contract_transactions_chart} />
-                                <p>* Excluding spam contracts</p>
+                                <p>* Excluding potential spam contracts</p>
                             </CardContent>
                         </Card>
                     </div>
@@ -190,7 +190,9 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardContent>
                         </Card>
                     </div>
+                    {/* <AboutBlock /> */}
                 </div>
+
             </div>
         </>
     );
