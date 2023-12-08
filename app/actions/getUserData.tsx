@@ -23,7 +23,6 @@ export async function getUserData({ timeframe }: UserDataParams): Promise<UserDa
     }
 
     const userData: UserData = await response.json();
-    // console.log(userData.transactions_chart)
 
     return userData;
 }
