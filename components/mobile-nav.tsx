@@ -1,10 +1,13 @@
 "use client"
 import {
-    ScrollText
+    ScrollText,
+    Code,
+    LayoutPanelLeft,
+    Menu,
+    Users
 } from "lucide-react"
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -24,6 +27,50 @@ export function MobileNav() {
                 <ScrollText className="mr-2 h-8 w-8" />
                 <h1 className="text-2xl font-bold tracking-tight">ScrollStats</h1>
             </Link>
+            <div className="px-16">
+                <DropdownMenu >
+                    <DropdownMenuTrigger asChild>
+                        <Menu className="mr-2 h-8 w-8" />
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent className="w-56">
+
+                        <DropdownMenuItem>
+                            <Users className="mr-2 h-4 w-4" />
+                            <Link
+                                href="/users/week"
+                                className={cn(
+                                    segments === "overview" ? "text-foreground" : "text-foreground/60"
+                                )}
+                            >
+                                Users
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <LayoutPanelLeft className="mr-2 h-4 w-4" />
+                            <Link
+                                href="/users/week"
+                                className={cn(
+                                    segments === "bundlers" ? "text-foreground" : "text-foreground/60"
+                                )}
+                            >
+                                Apps
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Code className="mr-2 h-4 w-4" />
+                            <Link
+                                href="/users/week"
+                                className={cn(
+                                    segments === "paymasters" ? "text-foreground" : "text-foreground/60"
+                                )}
+                            >
+                                Developers
+                            </Link>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            </div>
         </div>
     )
 }

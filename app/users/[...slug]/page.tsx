@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/card";
 import { ChevronUp, ChevronsUp, ChevronDown, ChevronsDown } from 'lucide-react';
 import { StatCard } from "@/components/stat-card";
-// import LChart from "@/components/line-chart";
+import StackedBarChart from "@/components/stacked-contracts-chart";
 import dynamic from 'next/dynamic';
 import { RetentionTable } from "@/components/retention-table";
 
 export const metadata: Metadata = {
-    title: "ScrollStats",
+    title: "ScrollStats - Users",
     description: "A dashboard tracking the activity of Scroll users.",
 };
 
@@ -142,7 +142,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             <CardHeader>
                                 <CardTitle>{titleparam + " Active Wallets"}</CardTitle>
                             </CardHeader>
-                            <CardContent className="pl-2">
+                            <CardContent className="pl-0">
                                 <LChart data={data.active_accounts_chart} />
                             </CardContent>
                         </Card>
@@ -150,8 +150,30 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             <CardHeader>
                                 <CardTitle>{titleparam + " Transactions"}</CardTitle>
                             </CardHeader>
-                            <CardContent className="pl-2">
+                            <CardContent className="pl-0">
                                 <LChart data={data.transactions_chart} />
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div >
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
+                            <CardHeader>
+                                <CardTitle>{titleparam + " Project Active Wallets"}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="pl-2">
+                                <StackedBarChart data={data.contract_users_chart} />
+                                <p>* Excluding spam contracts</p>
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div >
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
+                            <CardHeader>
+                                <CardTitle>{titleparam + " Project Transactions"}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="pl-2">
+                                <StackedBarChart data={data.contract_transactions_chart} />
+                                <p>* Excluding spam contracts</p>
                             </CardContent>
                         </Card>
                     </div>

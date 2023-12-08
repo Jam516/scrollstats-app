@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, CartesianGrid, ResponsiveContainer } from 'recharts';
 import moment from 'moment';
+import numeral from 'numeral';
 import { TooltipProps } from 'recharts';
 
 type DataItem = {
@@ -35,6 +36,14 @@ const LChart: React.FC<LineChartProps> = ({ data }) => {
     // Determine the key for the data (either ACTIVE_WALLETS or TRANSACTIONS)
     const dataKey = data[0]?.ACTIVE_WALLETS !== undefined ? 'ACTIVE_WALLETS' : 'TRANSACTIONS';
 
+    const formatYAxisTick = (value: number) => {
+        return numeral(value).format('0a'); // Formats the tick value
+    };
+
+    const axisLabelStyle = {
+        fontSize: '0.8rem' // Adjust the font size as needed
+    };
+
     return (
         <ResponsiveContainer width="100%" height={300}>
             <LineChart
@@ -48,8 +57,9 @@ const LChart: React.FC<LineChartProps> = ({ data }) => {
                     bottom: 5,
                 }}
             >
-                <XAxis dataKey="DATE" tickFormatter={formatDate} />
-                <YAxis />
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="DATE" tick={{ style: axisLabelStyle }} tickFormatter={formatDate} />
+                <YAxis tick={{ style: axisLabelStyle }} tickFormatter={formatYAxisTick} />
                 <Tooltip content={<CustomTooltip />} />
 
                 {/* <Legend /> */}
