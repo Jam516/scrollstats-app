@@ -82,7 +82,7 @@ const StackedBarChart: React.FC<StackedBarChartProps> = ({ data }) => {
                 <Tooltip />
                 {/* <Legend /> */}
                 {projects.map(project => (
-                    <Bar key={project} dataKey={project} stackId="a" fill={projectColors[project]} />
+                    <Bar key={project} dataKey={project} fill={projectColors[project]} barSize={30} />
                 ))}
             </BarChart>
         </ResponsiveContainer>

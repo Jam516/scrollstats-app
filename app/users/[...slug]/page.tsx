@@ -10,8 +10,10 @@ import {
 import { ChevronUp, ChevronsUp, ChevronDown, ChevronsDown } from 'lucide-react';
 import { StatCard } from "@/components/stat-card";
 import StackedBarChart from "@/components/stacked-contracts-chart";
+import GroupedBarChart from "@/components/grouped-contracts-chart";
 import dynamic from 'next/dynamic';
 import { RetentionTable } from "@/components/retention-table";
+import { TimeSelect } from "@/components/time-select";
 
 export const metadata: Metadata = {
     title: "ScrollStats - Users",
@@ -137,6 +139,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                         // subheader="Wallets"
                         />
                     </div>
+                    <TimeSelect />
                     <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
@@ -177,6 +180,17 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardContent>
                         </Card>
                     </div>
+                    {/* <div >
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
+                            <CardHeader>
+                                <CardTitle>{titleparam + " Project Transactions"}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="pl-2">
+                                <GroupedBarChart data={data.contract_transactions_chart} />
+                                <p>* Excluding potential spam contracts</p>
+                            </CardContent>
+                        </Card>
+                    </div> */}
                     <div >
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>

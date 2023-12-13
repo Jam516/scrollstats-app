@@ -8,7 +8,7 @@ export function SiteHeader() {
             <div className="hidden md:flex h-16 items-center px-4 justify-between">
                 <MainNav />
                 {/* <div className="pl-6"> */}
-                <TimeSelect />
+                {/* <TimeSelect /> */}
                 {/* </div> */}
             </div>
             <div className="flex md:hidden h-16 items-center px-4">
