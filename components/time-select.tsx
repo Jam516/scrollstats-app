@@ -37,9 +37,9 @@ export function TimeSelect() {
                 <SelectValue placeholder="Toggle Bar Chart Settings" />
             </SelectTrigger>
             <SelectContent>
-                <SelectItem value="month">Monthly Charts</SelectItem>
-                <SelectItem value="week">Weekly Charts</SelectItem>
-                <SelectItem value="day">Daily Charts</SelectItem>
+                <SelectItem value="month">MONTHLY CHARTS</SelectItem>
+                <SelectItem value="week">WEEKLY CHARTS</SelectItem>
+                <SelectItem value="day">DAILY CHARTS</SelectItem>
             </SelectContent>
         </Select>
     )

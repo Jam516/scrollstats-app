@@ -3,6 +3,7 @@ interface UserDataParams {
 }
 
 interface UserData {
+    time: string,
     actives_24h: { ACTIVE_WALLETS: number }[],
     actives_growth_24h: { DAILY_GROWTH: number }[],
     actives_7d: { ACTIVE_WALLETS: number }[],
