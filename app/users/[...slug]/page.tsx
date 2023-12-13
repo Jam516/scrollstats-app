@@ -140,7 +140,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                     </div>
                     <div className="flex justify-between">
                         <TimeSelect />
-                        <p className="text-green-500">LAST UPDATED: {data.time}</p>
+                        <p className="hidden md:inline text-green-500">LAST UPDATED: {data.time}</p>
                     </div>
                     <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                         <Card className="border-black shadow-custom shadow bg-card-bg">
