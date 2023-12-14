@@ -13,6 +13,7 @@ import StackedBarChart from "@/components/stacked-contracts-chart";
 import dynamic from 'next/dynamic';
 import { RetentionTable } from "@/components/retention-table";
 import { TimeSelect } from "@/components/time-select";
+import MSBarChart from "@/components/marketshare-contracts-chart";
 
 export const metadata: Metadata = {
     title: "ScrollStats - Users",
@@ -163,21 +164,21 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                     <div >
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
-                                <CardTitle>{titleparam + " Project Active Wallets"}</CardTitle>
+                                <CardTitle>{"Share of " + titleparam + " App Transactions by Project"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-2">
-                                <StackedBarChart data={data.contract_users_chart} />
+                                <MSBarChart data={data.contract_transactions_chart} />
                                 <p>* Excluding potential spam contracts</p>
                             </CardContent>
                         </Card>
                     </div>
-                    <div >
+                    <div>
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
-                                <CardTitle>{titleparam + " Project Transactions"}</CardTitle>
+                                <CardTitle>{"Share of " + titleparam + " App Gas Fees by Project"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-2">
-                                <StackedBarChart data={data.contract_transactions_chart} />
+                                <MSBarChart data={data.contract_users_chart} />
                                 <p>* Excluding potential spam contracts</p>
                             </CardContent>
                         </Card>
