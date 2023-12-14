@@ -28,6 +28,13 @@ interface DataTableProps<TData, TValue> {
     entity: boolean;
 }
 
+function truncateString(str: string) {
+    if (str.length <= 10) {
+        return str;
+    }
+    return `${str.substring(0, 5)}...${str.substring(str.length - 5)}`;
+}
+
 export function DataTable<TData, TValue>({
     columns,
     data,
@@ -53,7 +60,7 @@ export function DataTable<TData, TValue>({
                         <TableRow key={headerGroup.id}>
                             {headerGroup.headers.map((header) => {
                                 return (
-                                    <TableHead className="border border-black" key={header.id}>
+                                    <TableHead className="border border-black text-black" key={header.id} style={{ backgroundColor: '#FFDEB5' }}>
                                         {header.isPlaceholder
                                             ? null
                                             : flexRender(
@@ -76,9 +83,9 @@ export function DataTable<TData, TValue>({
                                 {row.getVisibleCells().map((cell, index) => (
                                     <TableCell className="border border-black" key={cell.id}>
                                         {index === 0 && entity ? (
-                                            <Link href={`/entity/all/week/${cell.getValue()}`}>
+                                            <Link href={`https://scrollscan.com/address/${cell.getValue()}`}>
                                                 <p className="font-bold text-blue-600">
-                                                    {cell.getValue() as string}
+                                                    {truncateString(cell.getValue() as string)}
                                                     <ExternalLink className="inline-block align-middle mr-2 h-4 w-4" />
                                                 </p>
                                             </Link>

@@ -13,8 +13,9 @@ interface UserData {
     active_accounts_chart: any[],
     transactions_chart: any[],
     retention_chart: any[],
-    contract_users_chart: any[],
     contract_transactions_chart: any[],
+    contract_gas_chart: any[],
+    trending_contracts: any[],
 }
 
 export async function getUserData({ timeframe }: UserDataParams): Promise<UserData> {

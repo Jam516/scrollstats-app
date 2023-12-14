@@ -14,6 +14,8 @@ import dynamic from 'next/dynamic';
 import { RetentionTable } from "@/components/retention-table";
 import { TimeSelect } from "@/components/time-select";
 import MSBarChart from "@/components/marketshare-contracts-chart";
+import { trendingcontractscolumns } from "@/components/columns"
+import { DataTable } from "@/components/data-table"
 
 export const metadata: Metadata = {
     title: "ScrollStats - Users",
@@ -178,7 +180,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardTitle>{"Share of " + titleparam + " App Gas Fees by Project"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-2">
-                                <MSBarChart data={data.contract_users_chart} />
+                                <MSBarChart data={data.contract_gas_chart} />
                                 <p>* Excluding potential spam contracts</p>
                             </CardContent>
                         </Card>
@@ -196,7 +198,18 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardContent>
                         </Card>
                     </div>
-                    {/* <AboutBlock /> */}
+                    <div >
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
+                            <CardHeader>
+                                <CardTitle>{"Past " + timeframe + " Trending Contracts"}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="pl-2">
+                                <div style={{ overflowX: 'auto', width: '100%' }}>
+                                    <DataTable columns={trendingcontractscolumns} data={data.trending_contracts} entity={true} />
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
                 </div>
 
             </div>
