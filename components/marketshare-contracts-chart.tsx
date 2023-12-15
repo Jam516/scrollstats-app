@@ -29,7 +29,8 @@ const specificProjectColors: Record<string, string> = {
     'Ambient': '#a982ed',
     'USDT': '#2a9d8f',
     'Rhino.fi': '#D1345B',
-    'SyncSwap': '#7871BA'
+    'SyncSwap': '#7871BA',
+    'Scroll Origins NFT': '#ECCCA2',
 };
 
 const toPercent = (decimal: number) => `${(decimal * 100).toLocaleString()}%`;
