@@ -49,7 +49,7 @@ export function MobileNav() {
                         <DropdownMenuItem>
                             <LayoutPanelLeft className="mr-2 h-4 w-4" />
                             <Link
-                                href="/users/week"
+                                href="/apps/week"
                                 className={cn(
                                     segments === "bundlers" ? "text-foreground" : "text-foreground/60"
                                 )}
@@ -60,7 +60,7 @@ export function MobileNav() {
                         <DropdownMenuItem>
                             <Code className="mr-2 h-4 w-4" />
                             <Link
-                                href="/users/week"
+                                href="/devs/week"
                                 className={cn(
                                     segments === "paymasters" ? "text-foreground" : "text-foreground/60"
                                 )}
