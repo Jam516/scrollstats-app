@@ -7,11 +7,11 @@ import moment from 'moment';
 type DataItem = {
     DATE: string;
     PROJECT: string;
-    NUM_UNIQUE_WALLETS?: number;
+    ETH_FEES?: number;
     NUM_TRANSACTIONS?: number;
 };
 
-type DataKey = 'NUM_UNIQUE_WALLETS' | 'NUM_TRANSACTIONS';
+type DataKey = 'ETH_FEES' | 'NUM_TRANSACTIONS';
 
 type MSChartProps = {
     data: DataItem[];
@@ -41,7 +41,7 @@ const getPercent = (value: number, total: number) => {
 };
 
 const MSBarChart: React.FC<MSChartProps> = ({ data }) => {
-    const keyToUse: DataKey = data[0] && data[0].NUM_UNIQUE_WALLETS !== undefined ? 'NUM_UNIQUE_WALLETS' : 'NUM_TRANSACTIONS';
+    const keyToUse: DataKey = data[0] && data[0].ETH_FEES !== undefined ? 'ETH_FEES' : 'NUM_TRANSACTIONS';
 
     // Group and transform the data for the chart
     const transformData = (data: DataItem[], keyToUse: DataKey): any[] => {
@@ -98,7 +98,7 @@ const MSBarChart: React.FC<MSChartProps> = ({ data }) => {
                         // Calculate the total value for the current group
                         const total = Object.keys(entry.payload)
                             .filter(key => key !== 'DATE')
-                            .reduce((acc, key) => acc + (entry.payload[key] || 0), 0);
+                            .reduce((acc, key) => acc + parseFloat(entry.payload[key] || '0'), 0);
 
                         // Return the formatted percentage
                         return getPercent(value, total);

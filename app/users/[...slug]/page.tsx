@@ -69,6 +69,11 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
         }
     }
 
+    function capitalizeFirstLetter(string: string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+
     return (
         <>
             <div className="flex flex-col">
@@ -201,7 +206,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                     <div >
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
-                                <CardTitle>{"Past " + timeframe + " Trending Contracts"}</CardTitle>
+                                <CardTitle>{"Past " + capitalizeFirstLetter(timeframe) + " Trending Contracts"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-2">
                                 <div style={{ overflowX: 'auto', width: '100%' }}>
