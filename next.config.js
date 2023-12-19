@@ -11,6 +11,11 @@ module.exports = {
                 destination: '/users/week',
                 permanent: true,
             },
+            {
+                source: '/bd',
+                destination: '/bd/month',
+                permanent: true,
+            },
         ]
     },
 };

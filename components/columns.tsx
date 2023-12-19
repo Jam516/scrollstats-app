@@ -31,11 +31,30 @@ export const bdcolumns: ColumnDef<BD>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("ETH_FEES"))
 
-            return <div className="text-center font-medium">{amount}</div>
+            return <div className="text-center font-medium">{amount.toFixed(2)}</div>
         },
     },
     {
-        accessorKey: "NUM_TRANSACTIONS",
+        accessorKey: "ETH_FEES_GROWTH",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Gas Fees Growth
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("ETH_FEES_GROWTH"))
+
+            return <div className="text-center font-medium">{amount.toFixed(2)}%</div>
+        },
+    },
+    {
+        accessorKey: "TRANSACTIONS",
         header: ({ column }) => {
             return (
                 <Button
@@ -48,28 +67,66 @@ export const bdcolumns: ColumnDef<BD>[] = [
             )
         },
         cell: ({ row }) => {
-            const amount = parseFloat(row.getValue("NUM_TRANSACTIONS"))
+            const amount = parseFloat(row.getValue("TRANSACTIONS"))
 
             return <div className="text-center font-medium">{amount}</div>
         },
     },
     {
-        accessorKey: "NUM_WALLETS",
+        accessorKey: "TRANSACTIONS_GROWTH",
         header: ({ column }) => {
             return (
                 <Button
                     variant="ghost"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
-                    Wallets
+                    Transactions Growth
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             )
         },
         cell: ({ row }) => {
-            const amount = parseFloat(row.getValue("NUM_WALLETS"))
+            const amount = parseFloat(row.getValue("TRANSACTIONS_GROWTH"))
+
+            return <div className="text-center font-medium">{amount.toFixed(2)}%</div>
+        },
+    },
+    {
+        accessorKey: "WALLETS",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Active Wallets
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("WALLETS"))
 
             return <div className="text-center font-medium">{amount}</div>
+        },
+    },
+    {
+        accessorKey: "WALLETS_GROWTH",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Wallets Growth
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("WALLETS_GROWTH"))
+
+            return <div className="text-center font-medium">{amount.toFixed(2)}%</div>
         },
     },
 ]
