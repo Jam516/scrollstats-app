@@ -179,7 +179,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardContent>
                         </Card>
                     </div>
-                    <div>
+                    {/* <div>
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{"Share of " + titleparam + " App Gas Fees by Project"}</CardTitle>
@@ -189,7 +189,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <p>* Excluding potential spam contracts</p>
                             </CardContent>
                         </Card>
-                    </div>
+                    </div> */}
                     <div >
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
