@@ -18,7 +18,7 @@ type MSChartProps = {
 };
 
 const formatDate = (date: string) => {
-    return moment(date, 'YY-MM-DD').format('DD-MMM-YY');
+    return moment(date, 'YYYY-MM-DD').format('DD-MMM-YY');
 };
 
 const predefinedColors = ['#896A67', '#264653', '#DDD1C7', '#EF6461', '#E9C46A', '#F4A261', '#823038', '#E76F51', '#1E000E', '#f16f9b', '#36eac2', '#39400b', '#4b2640'];
