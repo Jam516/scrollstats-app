@@ -61,6 +61,24 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             content={`${parseFloat(data.all_gross_profit[0].PROFIT).toFixed(2)} ETH`}
                         />
                     </div>
+                    <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
+                        <StatCard
+                            title="7d Revenue"
+                            className="border-black shadow bg-card-bg md:order-1"
+                            content={`${parseFloat(data.week_revenue[0].GAS_REV).toFixed(2)} ETH`}
+
+                        />
+                        <StatCard
+                            title="1m Revenue"
+                            className="border-black shadow bg-card-bg md:order-1"
+                            content={`${parseFloat(data.month_revenue[0].GAS_REV).toFixed(2)} ETH`}
+                        />
+                        <StatCard
+                            title="Total Revenue"
+                            className="border-black shadow bg-card-bg md:order-1"
+                            content={`${parseFloat(data.all_revenue[0].GAS_REV).toFixed(2)} ETH`}
+                        />
+                    </div>
                     <div className="flex justify-between">
                         <TimeSelect />
                     </div>

@@ -10,6 +10,9 @@ interface EconData {
     week_gross_profit: { PROFIT: string }[],
     month_gross_profit: { PROFIT: string }[],
     all_gross_profit: { PROFIT: string }[],
+    week_revenue: { GAS_REV: string }[],
+    month_revenue: { GAS_REV: string }[],
+    all_revenue: { GAS_REV: string }[],
 }
 
 export async function getEconData({ timeframe }: EconDataParams): Promise<EconData> {
