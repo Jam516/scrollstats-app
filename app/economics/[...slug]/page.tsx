@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { StatCard } from "@/components/stat-card";
 import { TimeSelect } from "@/components/time-select";
+import StackedFeeChart from "@/components/stacked-fee-chart";
 
 import LChart from "@/components/line-chart-econ"
 
@@ -33,7 +34,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
     function capitalizeFirstLetter(string: string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-    console.log(data.week_gross_profit)
+    // console.log(data.week_gross_profit)
 
 
     return (
@@ -153,6 +154,16 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <LChart data={data.verify_fees} yaxis={'VERIFICATION_FEES_USD'} usd={true} fill={"#D1345B"} />
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div >
+                        <Card className="border-black shadow-custom shadow bg-card-bg">
+                            <CardHeader>
+                                <CardTitle>{"Share of " + titleparam + " Gas Spend from L1 Fee vs L2 Fee"}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="pl-2">
+                                <StackedFeeChart data={data.l1vl2fee} />
                             </CardContent>
                         </Card>
                     </div>

@@ -33,7 +33,6 @@ const specificProjectColors: Record<string, string> = {
 };
 
 const StackedBarChart: React.FC<StackedBarChartProps> = ({ data }) => {
-    // console.log(data)
     // Determine the key to use (NUM_UNIQUE_WALLETS or NUM_TRANSACTIONS)
     const keyToUse: DataKey = data[0] && data[0].NUM_UNIQUE_WALLETS !== undefined ? 'NUM_UNIQUE_WALLETS' : 'NUM_TRANSACTIONS';
 

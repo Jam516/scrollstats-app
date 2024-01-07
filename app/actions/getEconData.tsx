@@ -13,6 +13,7 @@ interface EconData {
     week_revenue: { GAS_REV: string }[],
     month_revenue: { GAS_REV: string }[],
     all_revenue: { GAS_REV: string }[],
+    l1vl2fee: any[],
 }
 
 export async function getEconData({ timeframe }: EconDataParams): Promise<EconData> {
