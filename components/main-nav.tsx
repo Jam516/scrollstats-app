@@ -6,6 +6,15 @@ import { usePathname } from "next/navigation"
 import {
     ScrollText
 } from "lucide-react"
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
 
 export function MainNav() {
     const pathname = usePathname();

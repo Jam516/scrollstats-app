@@ -22,7 +22,7 @@ export async function getEconData({ timeframe }: EconDataParams): Promise<EconDa
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
     }
 
-    const userData: EconData = await response.json();
+    const econData: EconData = await response.json();
 
-    return userData;
+    return econData;
 }
