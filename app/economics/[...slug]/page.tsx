@@ -11,7 +11,7 @@ import { StatCard } from "@/components/stat-card";
 import { TimeSelect } from "@/components/time-select";
 import StackedFeeChart from "@/components/stacked-fee-chart";
 
-import LChart from "@/components/line-chart-econ"
+import BarChartEcon from "@/components/bar-chart-econ"
 
 export default async function UsersPage({ params }: { params: { slug: string[] } }) {
 
@@ -90,7 +90,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardDescription>Gas Fee Revenue - Cost of Posting Batches to L1 - Cost of Finalizing Batches with Proof</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.gross_profit} yaxis={'PROFIT'} usd={false} fill={"#3454D1"} />
+                                <BarChartEcon data={data.gross_profit} yaxis={'PROFIT'} usd={false} fill={"#3454D1"} />
                             </CardContent>
                         </Card>
                         <Card className="border-black shadow-custom shadow bg-card-bg">
@@ -99,7 +99,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardDescription>Gas Fee Revenue - Cost of Posting Batches to L1 - Cost of Finalizing Batches with Proof</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.gross_profit} yaxis={'PROFIT_USD'} usd={true} fill={"#3454D1"} />
+                                <BarChartEcon data={data.gross_profit} yaxis={'PROFIT_USD'} usd={true} fill={"#3454D1"} />
                             </CardContent>
                         </Card>
                     </div>
@@ -109,7 +109,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardTitle>{titleparam + " Gas Fee Revenue (ETH)"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.gas_revenue} yaxis={'GAS_REV'} usd={false} fill={"#2A9D8F"} />
+                                <BarChartEcon data={data.gas_revenue} yaxis={'GAS_REV'} usd={false} fill={"#2A9D8F"} />
                             </CardContent>
                         </Card>
                         <Card className="border-black shadow-custom shadow bg-card-bg">
@@ -117,7 +117,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardTitle>{titleparam + " Gas Fee Revenue (USD)"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.gas_revenue} yaxis={'GAS_REV_USD'} usd={true} fill={"#2A9D8F"} />
+                                <BarChartEcon data={data.gas_revenue} yaxis={'GAS_REV_USD'} usd={true} fill={"#2A9D8F"} />
                             </CardContent>
                         </Card>
                     </div>
@@ -127,7 +127,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardTitle>{titleparam + " Cost of Posting Batches (ETH)"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.batch_fees} yaxis={'BATCH_FEES'} usd={false} fill={"#D1345B"} />
+                                <BarChartEcon data={data.batch_fees} yaxis={'BATCH_FEES'} usd={false} fill={"#D1345B"} />
                             </CardContent>
                         </Card>
                         <Card className="border-black shadow-custom shadow bg-card-bg">
@@ -135,7 +135,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardTitle>{titleparam + " Cost of Posting Batches (USD)"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.batch_fees} yaxis={'BATCH_FEES_USD'} usd={true} fill={"#D1345B"} />
+                                <BarChartEcon data={data.batch_fees} yaxis={'BATCH_FEES_USD'} usd={true} fill={"#D1345B"} />
                             </CardContent>
                         </Card>
                     </div>
@@ -145,7 +145,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardTitle>{titleparam + " Cost of Verifying Batches (ETH)"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.verify_fees} yaxis={'VERIFICATION_FEES'} usd={false} fill={"#D1345B"} />
+                                <BarChartEcon data={data.verify_fees} yaxis={'VERIFICATION_FEES'} usd={false} fill={"#D1345B"} />
                             </CardContent>
                         </Card>
                         <Card className="border-black shadow-custom shadow bg-card-bg">
@@ -153,7 +153,7 @@ export default async function UsersPage({ params }: { params: { slug: string[] }
                                 <CardTitle>{titleparam + " Cost of Verifying Batches (USD)"}</CardTitle>
                             </CardHeader>
                             <CardContent className="pl-0">
-                                <LChart data={data.verify_fees} yaxis={'VERIFICATION_FEES_USD'} usd={true} fill={"#D1345B"} />
+                                <BarChartEcon data={data.verify_fees} yaxis={'VERIFICATION_FEES_USD'} usd={true} fill={"#D1345B"} />
                             </CardContent>
                         </Card>
                     </div>

@@ -34,7 +34,7 @@ const CustomTooltip: React.FC<TooltipProps<any, any>> = ({ active, payload, labe
     return null;
 };
 
-const LChart: React.FC<LineChartProps> = ({ data, yaxis, usd, fill }) => {
+const BarChartEcon: React.FC<LineChartProps> = ({ data, yaxis, usd, fill }) => {
 
     const transformedData = data.map(item => ({
         ...item,
@@ -70,4 +70,4 @@ const LChart: React.FC<LineChartProps> = ({ data, yaxis, usd, fill }) => {
     );
 };
 
-export default LChart;
+export default BarChartEcon;

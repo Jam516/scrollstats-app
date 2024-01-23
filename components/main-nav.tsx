@@ -48,7 +48,7 @@ export function MainNav() {
                 href="/devs/week"
                 className={cn(
                     "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
-                    segments === "developers" ? "text-foreground" : "text-foreground/60"
+                    segments === "devs" ? "text-foreground" : "text-foreground/60"
                 )}
             >
                 Developers

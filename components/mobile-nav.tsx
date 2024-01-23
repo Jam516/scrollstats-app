@@ -40,7 +40,7 @@ export function MobileNav() {
                             <Link
                                 href="/users/week"
                                 className={cn(
-                                    segments === "overview" ? "text-foreground" : "text-foreground/60"
+                                    segments === "users" ? "text-foreground" : "text-foreground/60"
                                 )}
                             >
                                 Users
@@ -51,7 +51,7 @@ export function MobileNav() {
                             <Link
                                 href="/apps/week"
                                 className={cn(
-                                    segments === "bundlers" ? "text-foreground" : "text-foreground/60"
+                                    segments === "apps" ? "text-foreground" : "text-foreground/60"
                                 )}
                             >
                                 Apps
@@ -62,7 +62,7 @@ export function MobileNav() {
                             <Link
                                 href="/devs/week"
                                 className={cn(
-                                    segments === "paymasters" ? "text-foreground" : "text-foreground/60"
+                                    segments === "devs" ? "text-foreground" : "text-foreground/60"
                                 )}
                             >
                                 Developers
