@@ -17,7 +17,7 @@ export function SiteFooter() {
                             <img src="/allium-logo.png" alt="Allium Logo" className="h-[50px]" />
                         </a>
                     </div>
-                    <div className="flex flex-col ">
+                    <div className="flex flex-col">
                         <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
                             Built by{" "}
                             <a
@@ -47,6 +47,16 @@ export function SiteFooter() {
                                 className="font-medium underline underline-offset-4"
                             >
                                 Scroll Users
+                            </a>
+                        </p>
+                        <p className="mb-4 text-center text-base font-semibold uppercase text-muted-foreground">
+                            <a
+                                href="https://www.scrollstats.com/devs/week"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="font-medium underline underline-offset-4"
+                            >
+                                Scroll Devs
                             </a>
                         </p>
                     </div>

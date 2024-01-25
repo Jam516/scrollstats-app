@@ -94,7 +94,13 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <h2 className="text-3xl font-bold tracking-tight">II. Github Activity</h2>
                     </div>
                     <div className="flex items-center justify-between space-y-2">
-                        <h2 className="text-xl font-bold tracking-tight text-gray-500">Using Electric Capital&apos;s crypto ecosystem labels</h2>
+                        <h2 className="text-xl font-bold tracking-tight text-gray-500">Using Electric Capital&apos;s
+                            <a
+                                href="https://github.com/electric-capital/crypto-ecosystems"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-blue-500"
+                            > crypto ecosystem labels</a></h2>
                     </div>
                     <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                         <Card className="border-black shadow-custom shadow bg-card-bg">
