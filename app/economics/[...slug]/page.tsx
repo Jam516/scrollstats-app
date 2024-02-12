@@ -11,7 +11,9 @@ import { StatCard } from "@/components/stat-card";
 import { TimeSelect } from "@/components/time-select";
 import StackedFeeChart from "@/components/stacked-fee-chart";
 
-import BarChartEcon from "@/components/bar-chart-econ"
+import BarChartEcon from "@/components/bar-chart-econ";
+
+export const maxDuration = 60;
 
 export default async function UsersPage({ params }: { params: { slug: string[] } }) {
 

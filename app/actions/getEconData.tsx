@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 interface EconDataParams {
     timeframe: string;
 }
@@ -17,6 +19,7 @@ interface EconData {
 }
 
 export async function getEconData({ timeframe }: EconDataParams): Promise<EconData> {
+    noStore();
     const response = await fetch(`https://scrollstats-api.onrender.com/economics?timeframe=${timeframe}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
