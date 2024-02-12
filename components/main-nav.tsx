@@ -53,6 +53,15 @@ export function MainNav() {
             >
                 Developers
             </Link>
+            <Link
+                href="/economics/week"
+                className={cn(
+                    "text-sm font-medium transition-colors hover:text-foreground/80 hover:text-primary",
+                    segments === "economics" ? "text-foreground" : "text-foreground/60"
+                )}
+            >
+                Economics
+            </Link>
         </nav>
     );
 }

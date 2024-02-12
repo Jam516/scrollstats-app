@@ -10,7 +10,7 @@ interface DeployerData {
 }
 
 export async function getDeployerData({ timeframe }: DeployerDataParams): Promise<DeployerData> {
-    const response = await fetch(`https://scrollstats-api.onrender.com/deployers?timeframe=${timeframe}`, { next: { revalidate: 600 } });
+    const response = await fetch(`https://scrollstats-api.onrender.com/deployers?timeframe=${timeframe}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
     }

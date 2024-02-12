@@ -8,7 +8,7 @@ interface DeveloperData {
 }
 
 export async function getDeveloperData({ timeframe }: DeveloperDataParams): Promise<DeveloperData> {
-    const response = await fetch(`https://scrollstats-api.onrender.com/developers?timeframe=${timeframe}`, { next: { revalidate: 600 } });
+    const response = await fetch(`https://scrollstats-api.onrender.com/developers?timeframe=${timeframe}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
     }

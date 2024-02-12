@@ -16,6 +16,11 @@ module.exports = {
                 destination: '/bd/month',
                 permanent: true,
             },
+            {
+                source: '/economics',
+                destination: '/economics/week',
+                permanent: true,
+            },
         ]
     },
 };

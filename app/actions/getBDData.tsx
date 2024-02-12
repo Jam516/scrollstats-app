@@ -6,10 +6,8 @@ interface BDDataParams {
     timeframe: string;
 }
 
-
-
 export async function getBDData({ timeframe }: BDDataParams): Promise<BDData> {
-    const response = await fetch(`https://scrollstats-api.onrender.com/bd?timeframe=${timeframe}`, { next: { revalidate: 600 } });
+    const response = await fetch(`https://scrollstats-api.onrender.com/bd?timeframe=${timeframe}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
     }

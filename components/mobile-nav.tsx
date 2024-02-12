@@ -4,7 +4,8 @@ import {
     Code,
     LayoutPanelLeft,
     Menu,
-    Users
+    Users,
+    CircleDollarSign
 } from "lucide-react"
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation"
@@ -66,6 +67,17 @@ export function MobileNav() {
                                 )}
                             >
                                 Developers
+                            </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <CircleDollarSign className="mr-2 h-4 w-4" />
+                            <Link
+                                href="/economics/week"
+                                className={cn(
+                                    segments === "economics" ? "text-foreground" : "text-foreground/60"
+                                )}
+                            >
+                                Economics
                             </Link>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
