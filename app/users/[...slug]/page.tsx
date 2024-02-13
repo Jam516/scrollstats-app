@@ -35,6 +35,8 @@ function AboutBlock() {
     )
 }
 
+export const maxDuration = 60;
+
 export default async function UsersPage({ params }: { params: { slug: string[] } }) {
 
     let timeframe = params.slug[0];

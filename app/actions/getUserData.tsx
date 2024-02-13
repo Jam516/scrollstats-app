@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 interface UserDataParams {
     timeframe: string;
 }
@@ -20,6 +22,7 @@ interface UserData {
 }
 
 export async function getUserData({ timeframe }: UserDataParams): Promise<UserData> {
+    noStore();
     const response = await fetch(`https://scrollstats-api.onrender.com/users?timeframe=${timeframe}`);
     if (!response.ok) {
         throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
