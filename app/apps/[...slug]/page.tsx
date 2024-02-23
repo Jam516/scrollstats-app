@@ -6,6 +6,7 @@ import { TimeSelect } from "@/components/time-select2";
 import { columns } from "@/components/columns";
 import { DataTable } from "@/components/data-table-advanced";
 import { appSchema } from "@/components/schema"
+import { DesktopBlocker } from "@/components/desktop-blocker"
 
 export const maxDuration = 60;
 
@@ -31,6 +32,7 @@ export default async function AppsPage({ params }: { params: { slug: string[] } 
     return (
         <>
             <div className="flex flex-col">
+                <DesktopBlocker />
                 <div className="flex-1 space-y-4 p-8 pt-3">
                     <div className="hidden h-full flex-1 flex-col space-y-2 p-2 md:flex">
                         <div className="flex items-center justify-between space-y-2">
