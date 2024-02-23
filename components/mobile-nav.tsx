@@ -47,7 +47,7 @@ export function MobileNav() {
                                 Users
                             </Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem>
+                        {/* <DropdownMenuItem>
                             <LayoutPanelLeft className="mr-2 h-4 w-4" />
                             <Link
                                 href="/apps/week"
@@ -57,7 +57,7 @@ export function MobileNav() {
                             >
                                 Apps
                             </Link>
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
                         <DropdownMenuItem>
                             <Code className="mr-2 h-4 w-4" />
                             <Link
