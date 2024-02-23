@@ -21,7 +21,7 @@ export function DesktopBlocker() {
     useEffect(() => {
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) {
-            setMessage('Sorry, this desktop only. It is not viewable on mobile');
+            setMessage('Sorry, the Apps page is desktop only');
             setHeaderMessage('Visit on Desktop');
             setShowDialog(true);
         }
@@ -41,6 +41,9 @@ export function DesktopBlocker() {
                             {message}
                         </AlertDialogDescription>
                     </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    </AlertDialogFooter>
                 </AlertDialogContent>
             </AlertDialog>
         </div>
