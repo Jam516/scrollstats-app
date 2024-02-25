@@ -56,7 +56,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Key Deployers ✨"}</CardTitle>
-                                <CardDescription>Contract deployers filtered for high quality</CardDescription>
+                                <CardDescription>Contract deployers filtered for high quality. 3 {timeframe} MA</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <BarChartEcon data={deploy_data.key_deployers} yaxis={'FILTERED_DEPLOYERS'} usd={false} fill={"#fac748"} />
@@ -65,7 +65,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Total Deployers"}</CardTitle>
-                                <CardDescription>All wallets that have deployed contracts</CardDescription>
+                                <CardDescription>All wallets that have deployed contracts. 3 {timeframe} MA</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <BarChartEcon data={deploy_data.all_deployers} yaxis={'ALL_DEPLOYERS'} usd={false} fill={"#3454D1"} />
@@ -84,6 +84,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Crosschain Key Deployers"}</CardTitle>
+                                <CardDescription>3 {timeframe} Moving Average</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <LineChainChart data={deploy_data.chain_key_deployers} usd={false} />
@@ -106,6 +107,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Active Devs on GitHub"}</CardTitle>
+                                <CardDescription>3 {timeframe} Moving Average</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <LineChartG data={git_data.git_devs} yaxis={'ACTIVE_DEVS'} usd={false} fill={"#3454D1"} />
@@ -115,6 +117,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " GitHub Commits"}</CardTitle>
+                                <CardDescription>3 {timeframe} Moving Average</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <LineChartG data={git_data.commits} yaxis={'COMMITS'} usd={false} fill={"#2a9d8f"} />
