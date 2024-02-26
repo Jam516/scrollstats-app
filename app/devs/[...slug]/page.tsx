@@ -84,7 +84,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Crosschain Key Deployers"}</CardTitle>
-                                <CardDescription>3 {timeframe} Moving Average</CardDescription>
+                                <CardDescription>3 {timeframe} moving average</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <LineChainChart data={deploy_data.chain_key_deployers} usd={false} />
@@ -107,7 +107,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " Active Devs on GitHub"}</CardTitle>
-                                <CardDescription>3 {timeframe} Moving Average</CardDescription>
+                                <CardDescription>3 {timeframe} moving average</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <LineChartG data={git_data.git_devs} yaxis={'ACTIVE_DEVS'} usd={false} fill={"#3454D1"} />
@@ -117,7 +117,7 @@ export default async function DeveloperPage({ params }: { params: { slug: string
                         <Card className="border-black shadow-custom shadow bg-card-bg">
                             <CardHeader>
                                 <CardTitle>{titleparam + " GitHub Commits"}</CardTitle>
-                                <CardDescription>3 {timeframe} Moving Average</CardDescription>
+                                <CardDescription>3 {timeframe} moving average</CardDescription>
                             </CardHeader>
                             <CardContent className="pl-0">
                                 <LineChartG data={git_data.commits} yaxis={'COMMITS'} usd={false} fill={"#2a9d8f"} />
