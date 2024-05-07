@@ -37,7 +37,7 @@ const LChart: React.FC<LineChartProps> = ({ data }) => {
     const dataKey = data[0]?.ACTIVE_WALLETS !== undefined ? 'ACTIVE_WALLETS' : 'TRANSACTIONS';
 
     const formatYAxisTick = (value: number) => {
-        return numeral(value).format('0a'); // Formats the tick value
+        return numeral(value).format('0[.]0a'); // Formats the tick value
     };
 
     const axisLabelStyle = {
