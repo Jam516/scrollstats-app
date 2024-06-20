@@ -124,7 +124,7 @@ export const columns: ColumnDef<App>[] = [
         ),
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("TVL"))
-            const displayValue = isNaN(amount) ? '-' : Math.round(amount).toLocaleString();
+            const displayValue = amount === 0 ? '-' : Math.round(amount).toLocaleString();
             return (
                 <div className="max-w-[500px] truncate font-medium">
                     ${displayValue}

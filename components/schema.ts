@@ -4,8 +4,8 @@ import { z } from "zod"
 // IRL, you will have a schema for your data models.
 export const appSchema = z.object({
     PROJECT: z.string(),
-    ETH_FEES: z.string(),
-    ETH_FEES_GROWTH: z.string(),
+    ETH_FEES: z.string().nullable(),
+    ETH_FEES_GROWTH: z.string().nullable(),
     TRANSACTIONS: z.number(),
     TRANSACTIONS_GROWTH: z.string(),
     WALLETS: z.number(),
